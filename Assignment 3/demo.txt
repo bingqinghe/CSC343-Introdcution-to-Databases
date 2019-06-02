@@ -1,0 +1,182 @@
+-- Query 1:
+SET
+psql:q1.sql:2: NOTICE:  table "q1" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+psql:q1.sql:10: NOTICE:  view "answer" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+INSERT 0 6
+ studentid  | firstname |  lastname  
+------------+-----------+------------
+ 0010784522 | Peter     | Dinklage
+ 0997733991 | Emilia    | Clarke
+ 0998801234 | Lena      | Headey
+ 1111111111 | Sophie    | Turner
+ 2222222222 | Maisie    | Williams
+ 5555555555 | Kit       | Harrington
+(6 rows)
+
+-- Query 2:
+SET
+psql:q2.sql:2: NOTICE:  table "q2" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+psql:q2.sql:10: NOTICE:  view "tf" does not exist, skipping
+psql:q2.sql:10: NOTICE:  view "mc" does not exist, skipping
+psql:q2.sql:10: NOTICE:  view "nu" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+INSERT 0 1
+INSERT 0 3
+INSERT 0 1
+ qid |                                    qtext                                     | numberhint 
+-----+------------------------------------------------------------------------------+------------
+ 566 | The Prime Minister, Justin Trudeau, is Canada's Head of State.               |           
+ 601 | During the "Quiet Revolution," Quebec experienced rapid change. In what     +|          3
+     | decade did this occur? (Enter the year that began the decade, e.g., 1840.)   | 
+ 625 | What is the Underground Railroad?                                            |          3
+ 782 | What do you promise when you take the oath of citizenship?                   |          1
+ 790 | During the War of 1812 the Americans burned down the Parliament Buildings in+|          0
+     | York (now Toronto). What did the British and Canadians do in return?         | 
+(5 rows)
+
+-- Query 3:
+SET
+psql:q3.sql:2: NOTICE:  table "q3" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+psql:q3.sql:10: NOTICE:  view "candidate" does not exist, skipping
+psql:q3.sql:10: NOTICE:  view "questioninquiz" does not exist, skipping
+DROP VIEW
+psql:q3.sql:11: NOTICE:  view "correctmc" does not exist, skipping
+psql:q3.sql:11: NOTICE:  view "correcttf" does not exist, skipping
+psql:q3.sql:11: NOTICE:  view "correctnu" does not exist, skipping
+DROP VIEW
+psql:q3.sql:12: NOTICE:  view "candidatemc" does not exist, skipping
+psql:q3.sql:12: NOTICE:  view "candidatetf" does not exist, skipping
+psql:q3.sql:12: NOTICE:  view "candidatenu" does not exist, skipping
+DROP VIEW
+psql:q3.sql:13: NOTICE:  view "scoremc" does not exist, skipping
+psql:q3.sql:13: NOTICE:  view "scoretf" does not exist, skipping
+psql:q3.sql:13: NOTICE:  view "scorenu" does not exist, skipping
+DROP VIEW
+psql:q3.sql:14: NOTICE:  view "combination" does not exist, skipping
+psql:q3.sql:14: NOTICE:  view "listmark" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+INSERT 0 5
+ studentid  |  lastname  | totalgrade 
+------------+------------+------------
+ 0010784522 | Dinklage   |          8
+ 0997733991 | Clarke     |          5
+ 0998801234 | Headey     |          3
+ 1111111111 | Turner     |           
+ 5555555555 | Harrington |          1
+(5 rows)
+
+-- Query 4:
+SET
+psql:q4.sql:2: NOTICE:  table "q4" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+psql:q4.sql:10: NOTICE:  drop cascades to 12 other objects
+DETAIL:  drop cascades to view correctmc
+drop cascades to view correcttf
+drop cascades to view correctnu
+drop cascades to view candidatemc
+drop cascades to view scoremc
+drop cascades to view candidatetf
+drop cascades to view scoretf
+drop cascades to view candidatenu
+drop cascades to view scorenu
+drop cascades to view combination
+drop cascades to view listmark
+drop cascades to view answer
+DROP VIEW
+psql:q4.sql:11: NOTICE:  view "noanswermc" does not exist, skipping
+psql:q4.sql:11: NOTICE:  view "noanswertf" does not exist, skipping
+psql:q4.sql:11: NOTICE:  view "noanswernu" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+INSERT 0 3
+INSERT 0 1
+INSERT 0 2
+ studentid  | qid |                                    qtext                                     
+------------+-----+------------------------------------------------------------------------------
+ 1111111111 | 566 | The Prime Minister, Justin Trudeau, is Canada's Head of State.
+ 1111111111 | 601 | During the "Quiet Revolution," Quebec experienced rapid change. In what     +
+            |     | decade did this occur? (Enter the year that began the decade, e.g., 1840.)
+ 1111111111 | 625 | What is the Underground Railroad?
+ 1111111111 | 790 | During the War of 1812 the Americans burned down the Parliament Buildings in+
+            |     | York (now Toronto). What did the British and Canadians do in return?
+ 5555555555 | 601 | During the "Quiet Revolution," Quebec experienced rapid change. In what     +
+            |     | decade did this occur? (Enter the year that began the decade, e.g., 1840.)
+ 5555555555 | 625 | What is the Underground Railroad?
+(6 rows)
+
+-- Query 5:
+SET
+psql:q5.sql:2: NOTICE:  table "q5" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+psql:q5.sql:11: NOTICE:  view "tookquiz" does not exist, skipping
+psql:q5.sql:11: NOTICE:  drop cascades to 3 other objects
+DETAIL:  drop cascades to view noanswermc
+drop cascades to view noanswertf
+drop cascades to view noanswernu
+DROP VIEW
+psql:q5.sql:12: NOTICE:  view "noanswermc" does not exist, skipping
+psql:q5.sql:12: NOTICE:  view "noanswertf" does not exist, skipping
+psql:q5.sql:12: NOTICE:  view "noanswernu" does not exist, skipping
+DROP VIEW
+psql:q5.sql:13: NOTICE:  view "correctmc" does not exist, skipping
+psql:q5.sql:13: NOTICE:  view "correcttf" does not exist, skipping
+psql:q5.sql:13: NOTICE:  view "correctnu" does not exist, skipping
+DROP VIEW
+psql:q5.sql:14: NOTICE:  view "getmc" does not exist, skipping
+psql:q5.sql:14: NOTICE:  view "gettf" does not exist, skipping
+psql:q5.sql:14: NOTICE:  view "getnu" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+INSERT 0 2
+INSERT 0 1
+INSERT 0 1
+ qid | correct | wrong | noresponse 
+-----+---------+-------+------------
+ 566 |       3 |     1 |          1
+ 601 |       2 |     1 |          2
+ 625 |       2 |     1 |          2
+ 790 |       2 |     2 |          1
+(4 rows)
+
